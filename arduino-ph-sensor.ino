@@ -1,5 +1,22 @@
 #include  <Wire.h> //Libreria encargada de manejar la comunicación I2C con la pantalla.
 #include  <LiquidCrystal_I2C.h> //Libreria encargada de manejar la pantalla LCD.
+/*
+PINOUT
+LCD SCREEN      Arduino NANO
+GND             GND
+VCC             5V
+SDA             A4
+SCL             A5
+
+PH PROBE      Arduino NANO
+V+             5V
+G              GND
+G              GND || N/C
+Po             A2
+Do             N/C 
+To             N/C
+*/
+
 LiquidCrystal_I2C lcd(0x27, 2, 1, 0, 4, 5, 6, 7, 3, POSITIVE); //Inicialización de la pantalla con sus pin's.
 
 int ph_pin = A2; // A2 -> PIN de lectura de la sonda (Analogico 2).
